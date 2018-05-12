@@ -1,0 +1,15 @@
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }} - Spacet</title>
+        {% else %}
+        <title>Welcome to Spacet</title>
+        {% endif %}
+    </head>
+    <body>
+        <div>Spacet: <a href="/index">Home</a></div>
+        <hr>
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>
