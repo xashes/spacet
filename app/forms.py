@@ -3,6 +3,6 @@ from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
 
 
-class ChartForm(FlaskForm):
+class SymbolForm(FlaskForm):
     symbol = StringField(validators=[DataRequired()])
     submit = SubmitField('Submit')

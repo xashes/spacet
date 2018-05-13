@@ -1,10 +1,12 @@
 {% extends "base.html" %} 
-{% block content %}
-<form method="post" action="">
-    {{ form.hidden_tag() }}
-    <p>
-        {{ form.symbol(size=16) }}
-    </p>
-    <p>{{ form.submit }}</p>
-</form>
-{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+{% for jsfile_name in script_list %}
+    <script src="{{ host }}/{{ jsfile_name }}.js"></script>
+{% endfor %}
+{% endblock scripts %}
+
+{% block app_content %}
+    <h1>{{ symbol }}</h1>
+{% endblock app_content %}
