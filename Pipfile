@@ -9,6 +9,8 @@ flask-wtf = "*"
 tdata = "*"
 pyecharts = "*"
 flask-bootstrap = "*"
+flask-sqlalchemy = "*"
+flask-migrate = "*"
 
 [dev-packages]
 
