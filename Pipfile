@@ -11,6 +11,9 @@ pyecharts = "*"
 flask-bootstrap = "*"
 flask-sqlalchemy = "*"
 flask-migrate = "*"
+ta-lib = "*"
+pandas = "*"
+jaqs = "*"
 
 [dev-packages]
 "autopep8" = "*"

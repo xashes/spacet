@@ -1,17 +1,13 @@
 {% extends "base.html" %}
 
-{% block scripts %}
-{{ super() }}
-{% for jsfile_name in script_list %}
-    <script src="{{ host }}/{{ jsfile_name }}.js"></script>
-{% endfor %}
-{% endblock scripts %}
-
 {% block app_content %}
     <div class="row">
         <div class="col-xs-4">
             {{ wtf.quick_form(form, form_type="inline") }}
         </div>
     </div>
-    <h3>{{ symbol }}</h3>
+    {% for jsfile_name in script_list %}
+        <script src="{{ host }}/{{ jsfile_name }}.js"></script>
+    {% endfor %}
+    {{ myechart|safe }}
 {% endblock app_content %}
