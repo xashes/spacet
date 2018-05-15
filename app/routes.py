@@ -15,7 +15,7 @@ def index():
     return render_template('index.html', form=form)
 
 @app.route('/chart/<symbol>', methods=['GET', 'POST'])
-def chart(symbol):
+def chart(symbol='000001.SH'):
     form = SymbolForm()
     data = local.daily(symbol)
     brush_chart = brush(data)

@@ -41,6 +41,9 @@ def brush(data):
         mark_line_valuedim=['highest', 'lowest'],
         is_datazoom_show=True,
         datazoom_xaxis_index=[0, 1, 2],
+        datazoom_type='both',
+        tooltip_axispointer_type='cross',
+        is_more_utils=True,
     )
     brush = Line()
     brush.add(
