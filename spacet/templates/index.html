@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block app_content %}
+    <div class="row">
+        <div class="col-xs-4">
+            {{ wtf.quick_form(form, form_type="inline") }}
+            
+            <datalist id="symbols">
+                {% for symbol in symbols %}
+                    <option value="{{ symbol }}">
+                {% endfor %}
+            </datalist>
+        </div>
+    </div>
+{% endblock app_content %}
