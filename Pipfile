@@ -9,12 +9,11 @@ flask-wtf = "*"
 tdata = "*"
 pyecharts = "*"
 flask-bootstrap = "*"
-flask-sqlalchemy = "*"
-flask-migrate = "*"
 ta-lib = "*"
 pandas = "*"
 jaqs = "*"
 arctic = {git = "https://github.com/manahl/arctic.git"}
+sqlalchemy = "*"
 
 [dev-packages]
 "autopep8" = "*"

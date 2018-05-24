@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "f5269c0ea1a573a0344b7e0efa3e52932a3f3ce9e15bd773cd2b2e907acaf906"
+            "sha256": "1f77cffe7624859ac7882a7990e57c8c5c95e238511567cf7e3398c18c0f4e7e"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -16,12 +16,6 @@
         ]
     },
     "default": {
-        "alembic": {
-            "hashes": [
-                "sha256:85bd3ea7633024e4930900bc64fb58f9742dedbc6ebb6ecf25be2ea9a3c1b32e"
-            ],
-            "version": "==0.9.9"
-        },
         "arctic": {
             "git": "https://github.com/manahl/arctic.git"
         },
@@ -80,22 +74,6 @@
             ],
             "index": "pypi",
             "version": "==3.3.7.1"
-        },
-        "flask-migrate": {
-            "hashes": [
-                "sha256:493f9b3795985b9b4915bf3b7d16946697f027b73545384e7d9e3a79f989d2fe",
-                "sha256:b709ca8642559c3c5a81a33ab10839fa052177accd5ba821047a99db635255ed"
-            ],
-            "index": "pypi",
-            "version": "==2.1.1"
-        },
-        "flask-sqlalchemy": {
-            "hashes": [
-                "sha256:3bc0fac969dd8c0ace01b32060f0c729565293302f0c4269beed154b46bec50b",
-                "sha256:5971b9852b5888655f11db634e87725a9031e170f37c0ce7851cf83497f56e53"
-            ],
-            "index": "pypi",
-            "version": "==2.3.2"
         },
         "flask-wtf": {
             "hashes": [
@@ -157,12 +135,6 @@
                 "sha256:7a8eae9886ea4a5df4fcf4f71f53165b82becfc7fc87d9c1c8cd2196f22d9408"
             ],
             "version": "==1.1.0b2"
-        },
-        "mako": {
-            "hashes": [
-                "sha256:4e02fde57bd4abb5ec400181e4c314f56ac3e49ba4fb8b0d50bba18cb27d25ae"
-            ],
-            "version": "==1.0.7"
         },
         "markupsafe": {
             "hashes": [
@@ -301,12 +273,6 @@
             ],
             "version": "==2.7.3"
         },
-        "python-editor": {
-            "hashes": [
-                "sha256:a3c066acee22a1c94f63938341d4fb374e3fdd69366ed6603d7b24bed1efc565"
-            ],
-            "version": "==1.0.3"
-        },
         "python-snappy": {
             "hashes": [
                 "sha256:2ce83e44587adbc7239589048d660a92f899eb45af4e48e73092192a8b0f0789"
@@ -365,6 +331,7 @@
             "hashes": [
                 "sha256:d6cda03b0187d6ed796ff70e87c9a7dce2c2c9650a7bc3c022cd331416853c31"
             ],
+            "index": "pypi",
             "version": "==1.2.7"
         },
         "ta-lib": {
