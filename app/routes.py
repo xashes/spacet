@@ -1,12 +1,10 @@
 from app import app
 from flask import render_template, redirect, url_for
 from app.forms import SymbolForm, RecordForm
-from app.charts import brush, kline
-from tdata import local
+from tdata import local, charts, feature
 from arctic import Arctic
 
 arctic = Arctic('pi3')
-ZEN_LIB = arctic['zen']
 DAILY_LIB = arctic['daily']
 instruments = arctic['basedata'].read('instruments').data
 symbols = (instruments.symbol + ' ' + instruments.name)
@@ -26,13 +24,13 @@ def index():
 @app.route('/chart/<symbol>', methods=['GET', 'POST'])
 def chart(symbol='000001.SH'):
     form = SymbolForm()
-    data = ZEN_LIB.read(symbol).data
-    data = data[data['open'] != 0]
-    chart = brush(data)
+    data = local.daily(symbol)
+    full_data = feature.full_data(data)
+    echart = charts.brush(full_data)
     context = dict(
-        myechart=chart.render_embed(),
+        myechart=echart.render_embed(),
         host=REMOTE_HOST,
-        script_list=chart.get_js_dependencies(),
+        script_list=echart.get_js_dependencies(),
     )
     if form.validate_on_submit():
         return redirect(f'/chart/{form.symbol.data.split()[0]}')
