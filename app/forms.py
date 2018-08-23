@@ -5,7 +5,7 @@ from datetime import datetime
 
 
 class SymbolForm(FlaskForm):
-    symbol = StringField(validators=[DataRequired()])
+    symbol = StringField('symbol', validators=[DataRequired()])
     submit = SubmitField('Submit')
 
 

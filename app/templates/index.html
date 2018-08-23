@@ -3,7 +3,16 @@
 {% block app_content %}
     <div class="row">
         <div class="col-xs-4">
-            {{ wtf.quick_form(form, form_type="inline") }}
+            <form class="form form-horizontal" method="post" role="form">
+                {{ form.hidden_tag() }}
+                {{ form.symbol(list='id_symbols') }}
+                <datalist id="id_symbols">
+                {% for symbol in symbols %}
+                    <option value={{ symbol }} />
+                {% endfor %}
+                </datalist>
+                {{ form.submit() }}
+            </form>
         </div>
     </div>
 {% endblock app_content %}
