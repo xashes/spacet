@@ -1,7 +1,8 @@
 from app import app
 from flask import render_template, redirect, url_for
 from app.forms import SymbolForm, RecordForm
-from tdata import local, charts, feature
+from tdata import local, feature
+from tdata import chart as tchart
 from arctic import Arctic
 
 arctic = Arctic('pi3')
@@ -23,14 +24,16 @@ def index():
 
 @app.route('/chart/<symbol>', methods=['GET', 'POST'])
 def chart(symbol='000001.SH'):
+    # render a standalone html file and open a new tab for it?
+    # downside: can't input information in it
     form = SymbolForm()
     data = local.daily(symbol)
-    full_data = feature.full_data(data)
-    echart = charts.brush(full_data)
+    data = feature.add_columns(data)
+    chart = tchart.brush(data)
     context = dict(
-        myechart=echart.render_embed(),
+        myechart=chart.render_embed(),
         host=REMOTE_HOST,
-        script_list=echart.get_js_dependencies(),
+        script_list=chart.get_js_dependencies(),
     )
     if form.validate_on_submit():
         return redirect(f'/chart/{form.symbol.data.split()[0]}')
