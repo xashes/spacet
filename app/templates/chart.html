@@ -11,6 +11,12 @@
                         <option value={{ symbol }} />
                     {% endfor %}
                 </datalist>
+                {{ form.frequency(list='id_frequencies') }}
+                <datalist id="id_frequencies">
+                    {% for freq in frequencies %}
+                        <option value={{ freq }} />
+                    {% endfor %}
+                </datalist>
                 {{ form.submit() }}
             </form>
         </div>
