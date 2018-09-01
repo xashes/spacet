@@ -23,12 +23,11 @@ def index():
     return render_template('index.html', form=form, symbols=symbols)
 
 
-@app.route('/chart/<symbol>', methods=['GET', 'POST'])
+@app.route('/chart/<symbol>/<freq>', methods=['GET', 'POST'])
 def chart(symbol='000001.SH', freq='D'):
     # render a standalone html file and open a new tab for it?
     # downside: can't input information in it
     form = SymbolForm()
-    freq = session.get('freq')
     data = local.bar(symbol, freq=freq)
     data = feature.add_columns(data)
     chart = tchart.brush(data)
@@ -40,7 +39,7 @@ def chart(symbol='000001.SH', freq='D'):
     if form.validate_on_submit():
         session['symbol'] = form.symbol.data.split()[0]
         session['freq'] = form.frequency.data
-        return redirect(url_for('chart', symbol=session.get('symbol')))
+        return redirect(url_for('chart', symbol=session.get('symbol'), freq=session.get('freq')))
     return render_template(
         'chart.html',
         form=form,
