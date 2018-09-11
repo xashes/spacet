@@ -6,7 +6,7 @@ name = "pypi"
 [packages]
 flask = "*"
 flask-wtf = "*"
-tdata = {path = "./../tdata"}
+tdata = {editable = true, path = "./../tdata"}
 flask-bootstrap = "*"
 ta-lib = "*"
 pandas = "*"

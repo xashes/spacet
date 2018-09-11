@@ -25,8 +25,6 @@ def index():
 
 @app.route('/chart/<symbol>/<freq>', methods=['GET', 'POST'])
 def chart(symbol='000001.SH', freq='D'):
-    # render a standalone html file and open a new tab for it?
-    # downside: can't input information in it
     form = SymbolForm()
     data = local.bar(symbol, freq=freq)
     data = feature.add_columns(data)
